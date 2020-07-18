@@ -5,25 +5,28 @@ and i is a number. The function should not return
 anything, but instead should remove the element at
 index i from the list argument.
 
-Example useage:
+Example usage:
 
 var myList = [‘a’, ‘b’, ‘c’, ‘d’];
 remove(myList, 2);
 // myList is now [‘a’, ‘b’, ‘d’];
 */
 
+function remove(list, i) {
+  list = list.splice(i, 1);
+};
 
 /*Task 2
 
 Write a function reversed(list) that takes an array of 
 strings, and returns a single which consists of all the 
-strings in the array, in reverse order, concatonated 
-and seperated by commas. Note that the function should 
+strings in the array, in reverse order, concatenated 
+and separated by commas. Note that the function should 
 not add a trailing comma at the end of the reversed 
 string, only between the items. You should also just be 
 adding a comma between items, no spaces.
 
-Example useages:
+Example usages:
 
 var myList = [‘Java’, ‘PHP’, ‘Ruby’];
 reversed(myList);
@@ -32,7 +35,7 @@ reversed(myList);
 reversed([‘a’, ‘b’, ‘c’, ‘d’])
 // Result: ‘d,c,b,a’
 
-For this task, remember string concatentation:
+For this task, remember string concatenation:
 
 var first = ‘a’;
 var second = ‘b’;
@@ -43,6 +46,15 @@ You’ll probably also have to use an if/else statement
 or a ternary at some point...
 */
 
+function reversed(list) {
+  reversed_list = "";
+
+  for(i = list.length - 1; i >=0 ; i--) {
+    i > 0 ? reversed_list += list[i] + "," : reversed_list += list[i];
+  }
+
+  return reversed_list
+}
 
 /*Task 3
 
@@ -62,3 +74,11 @@ var scores = [50, 120, 180, 10];
 var percentages = calculatePercentages(scores, 200);
 // percentages: [25, 60, 90, 5]
 */
+
+function calculatePercentages(scores, totalPossibleScore) {
+  percents = [];
+  for (var i = 0; i < scores.length; i++) {
+    percents.push((scores[i]/totalPossibleScore) * 100);
+  }
+  return percents
+}
