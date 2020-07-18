@@ -14,7 +14,10 @@ returns [10, 20, 30], the same as doing
 [1, 2, 3].map(x => x * 10)
 */
 
-
+function myMap (arr, func) {
+  result = arr.map(func)
+  return result
+}
 
 
 /*
@@ -47,3 +50,7 @@ loadedWithNumbers(x => x - 1);
 
 returns [0, 1, 2]
 */
+
+function preloadedMap () {
+
+}

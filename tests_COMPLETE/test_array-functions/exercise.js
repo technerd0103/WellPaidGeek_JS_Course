@@ -34,6 +34,14 @@ var pricesWithTax = withTax(prices)
 //pricesWithTax: [24, 131.4, 4.79, 359.99]
 */
 
+function withTax (prices) {
+  priceWithTax = []
+  prices.map(function (price) {
+    priceWithTax.push(Number(price >= 100 ? (price * 1.2).toFixed(2) : (price).toFixed(2)));
+  });
+  
+  return priceWithTax
+}
 
 /*
 Task 2
@@ -72,3 +80,13 @@ perRegionAnually: [
 	160, // Berlin
 ]
 */
+
+
+
+function totalPerRegion (rainfall) {
+  return rainfall.map(function (data) {
+    return data.reduce(function (runningTotal, currentValue) {
+      return runningTotal + currentValue;
+    }, 0);
+  });
+}

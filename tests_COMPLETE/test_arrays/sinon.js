@@ -5457,7 +5457,7 @@ module.exports = {
 // This is free and unencumbered software released into the public domain.
 // See LICENSE.md for more information.
 
-var encoding = require("./lib/encoding.js");
+var encoding = require("./lib/encoding.js.js");
 
 module.exports = {
   TextEncoder: encoding.TextEncoder,
@@ -5527,7 +5527,7 @@ module.exports = {
   if (typeof module !== "undefined" && module.exports &&
     !global["encoding-indexes"]) {
     global["encoding-indexes"] =
-      require("./encoding-indexes.js")["encoding-indexes"];
+      require("./encoding-indexes.js.js")["encoding-indexes"];
   }
 
   //
